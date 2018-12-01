@@ -19,13 +19,10 @@ InboxSDK.load(2, 'sdk_amalb_am_b382d5f1a6').then(function(sdk){
                     if (event.origin.match(/^chrome-extension:\/\//)) {
                         //make sure that the message is coming from an extension and you can get more strict that the
                         //extension id is the same as your public extension id
-                        if (event.data === 'close') {
-                            console.log('got close event from iframe');
-                            //modal.close();
+                        if (event.data.match(/^template#/)) {
+                            const template_contents = event.data.substring('template#'.length);
 
-                        } else if (event.data === 'TODO-other-events-to-handle') {
-                            // TODO
-                            console.log('TODO need to handle other events');
+                            console.log('Got template contents from iframe: ' + template_contents);
                         }
                     }
                 };

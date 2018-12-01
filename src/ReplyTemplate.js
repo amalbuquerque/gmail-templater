@@ -8,6 +8,11 @@ class ReplyTemplate extends Component {
     }
 
     handleClick() {
+        const message = 'template#' + this.props.contents;
+
+        // eslint-disable-next-line
+        parent.postMessage(message, '*');
+
         console.log('Clicked on ' + this.props.number + ' Contents: ' + this.props.contents);
     }
 
