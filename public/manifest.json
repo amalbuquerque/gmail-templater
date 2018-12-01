@@ -11,17 +11,13 @@
   "content_scripts" : [
     {
       "matches": ["https://mail.google.com/*", "https://inbox.google.com/*"],
-      "js": ["inboxsdk.js"]
+      "js": ["inboxsdk.js", "normal-app.js"]
     }
   ],
-  "content_security_policy": "script-src 'self' 'sha256-GgRxrVOKNdB4LrRsVPDSbzvfdV4UqglmviH9GoBJ5jk='; object-src 'self'",
+  "content_security_policy": "script-src 'unsafe-eval' 'self' 'sha256-GgRxrVOKNdB4LrRsVPDSbzvfdV4UqglmviH9GoBJ5jk='; object-src 'self'",
   "web_accessible_resources": [
     "icon.png",
-    "frame.html"
+    "index.html"
   ],
-  "browser_action": {
-      "default_popup": "index.html",
-      "default_title": "Open the popup"
-  },
   "icons": {"128": "icon.png"}
 }

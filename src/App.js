@@ -9,16 +9,20 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            TODO: Send click events to the root window
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <table>
+            <tr>
+                <td>1.</td>
+                <td>First template</td>
+                <td>Button here</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>Second template</td>
+                <td>Button here</td>
+            </tr>
+          </table>
         </header>
       </div>
     );
