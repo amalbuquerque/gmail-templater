@@ -1,15 +1,27 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
+  "manifest_version": 2,
+  "name": "Gmail Templates REACT",
+  "version": "1.0",
+  "permissions": [
+    "https://mail.google.com/",
+    "https://inbox.google.com/",
+    "https://www.google.com/",
+    "https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"
+  ],
+  "content_scripts" : [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "matches": ["https://mail.google.com/*", "https://inbox.google.com/*"],
+      "js": ["inboxsdk.js"]
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "content_security_policy": "script-src 'self' 'sha256-GgRxrVOKNdB4LrRsVPDSbzvfdV4UqglmviH9GoBJ5jk='; object-src 'self'",
+  "web_accessible_resources": [
+    "icon.png",
+    "frame.html"
+  ],
+  "browser_action": {
+      "default_popup": "index.html",
+      "default_title": "Open the popup"
+  },
+  "icons": {"128": "icon.png"}
 }
