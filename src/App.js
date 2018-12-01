@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import ReplyTemplate from './ReplyTemplate';
 import './App.css';
 
 class App extends Component {
@@ -12,16 +13,9 @@ class App extends Component {
             TODO: Send click events to the root window
           </p>
           <table>
-            <tr>
-                <td>1.</td>
-                <td>First template</td>
-                <td>Button here</td>
-            </tr>
-            <tr>
-                <td>2.</td>
-                <td>Second template</td>
-                <td>Button here</td>
-            </tr>
+            <ReplyTemplate number="1." contents="Foo" />
+            <ReplyTemplate number="2." contents="Bar" />
+            <ReplyTemplate number="3." contents="Baz" />
           </table>
         </header>
       </div>
